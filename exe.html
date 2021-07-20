@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="shortcut icon" href="image/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
+    <title>Realtime weather</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .con {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2rem;
+            border: 3px solid rgb(20, 15, 15);
+            min-width: 280px;
+            max-width: 525px;
+            width: 50%;
+            background-color: rgb(20, 15, 15);
+            border-radius: 9px;
+            height: 2.6rem;
+        }
+
+        input {
+            background-color: rgb(20, 15, 15);
+            border: none;
+
+        }
+
+        .btn_me {
+            padding: 5px;
+            background-color: rgb(0, 132, 255);
+            color: aliceblue;
+            font-weight: 500;
+        }
+
+        .btn_me:hover {
+            background-color: rgb(0, 102, 255);
+        }
+
+        .btn_me:active {
+            background-color: rgb(117, 177, 255);
+        }
+
+        .date {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            /* border: 2px solid rgb(0, 255, 0); */
+            min-width: 280px;
+            max-width: 525px;
+            width: 50%;
+            background-color: rgb(20, 15, 15);
+            color: aliceblue;
+            border-radius: 9px 9px 0 0;
+
+        }
+
+        .con_img {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            /* border: 2px solid red; */
+            min-width: 280px;
+            max-width: 525px;
+            width: 50%;
+            height: 10rem;
+            background-color: #323442;
+            color: white;
+            border-radius: 0 0 9px 9px;
+        }
+
+        .container {
+
+            display: flex;
+            /* align-items: center;  */
+            justify-content: center;
+            flex-direction: column;
+            float: left;
+        }
+
+        .cityname {
+            /* border: 2px solid gray; */
+            min-width: 280px;
+            max-width: 525px;
+            width: 50%;
+            background-color: #323442;
+            color: white;
+            padding: 0 0 0 1em;
+        }
+
+        .date p {
+            padding: 0 1em;
+        }
+
+        .temp {
+            /* border: 2px solid yellow; */
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid main_manu">
+        <div class="row">
+          <div class="col-md-10 col-12 mx-auto ">
+            <nav class="navbar navbar-expand-lg ">
+              <a class="bigger navbar-brand" href="/">Weather<span style="color: #74fff2;" >ly</span></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggle-bar"><i class="fas fa-bars"></i></span>
+              </button>
+    
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/weather">weather</a>
+                  </li>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/about">about</a>
+                  </li>
+                  </li>
+    
+    
+    
+                </ul>
+    
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+    <div class="con">
+        <input type="text" id="inp" placeholder="search your city name">
+        <button class="btn btn_me" id="src" type="submit" value="search">search</button>
+    </div>
+
+    <div class="date">
+        <p class="daytime">monday</p>
+        <p class="date_time">13/oct</p>
+
+    </div>
+    <div class="cityname">
+        <h4> Bera,Bangladesh</h4>
+    </div>
+
+
+    <div class="con_img">
+        <div class="temp">
+            <h1> 26.6<sup>o</sup></h1>
+        </div>
+        <div class="temp_con temp">
+            logo
+        </div>
+
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

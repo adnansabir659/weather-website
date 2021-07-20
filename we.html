@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather app for all</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 800;
+
+        }
+
+
+        .box {
+            background: rgb(0, 160, 253);
+            width: 24vw;
+            height: 60vh;
+
+            position: absolute;
+            top: 20%;
+            bottom: 20%;
+            box-sizing: border-box;
+            min-height: auto;
+            border-radius: 9px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+
+        }
+
+        .contant {
+            position: absolute;
+            bottom: 0;
+            z-index: 5;
+        }
+
+        .web1 {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 100px;
+            animation: sabir 5000ms infinite linear;
+            position: absolute;
+            bottom: 0;
+            z-index: 1;
+            opacity: 0.3;
+            overflow: hidden;
+
+        }
+
+        .web2 {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 100px;
+            animation: sabi 5000ms infinite linear;
+            position: absolute;
+            bottom: 0;
+            z-index: 2;
+            opacity: 0.3;
+            overflow: hidden;
+
+        }
+
+        .web3 {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 100px;
+            animation: abir 5000ms infinite linear;
+            position: absolute;
+            bottom: 0;
+            z-index: 3;
+            opacity: 0.3;
+            overflow: hidden;
+
+        }
+
+        @keyframes sabir {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes abir {
+            from {
+                transform: rotate(50deg);
+            }
+
+            to {
+                transform: rotate(410deg);
+            }
+        }
+
+        @keyframes sabi {
+            from {
+                transform: rotate(100deg);
+            }
+
+            to {
+                transform: rotate(460deg);
+            }
+        }
+
+        .fass {
+            color: yellow;
+            font-size: 100px;
+            padding-top: 25px;
+            animation: sun 3000ms infinite alternate;
+        }
+
+        @keyframes sun {
+            from {
+                transform: scale(1.1);
+            }
+
+            to {
+                transform: scale(1.5);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="web1">
+
+    </div>
+    <div class="web2">
+
+    </div>
+    <div class="web3">
+
+    </div>
+    <div class="box">
+        <div class="sun">
+            <i class="fas fass fa-sun"></i>
+        </div>
+
+
+        <div class="contant">
+            <div class="tem">
+                <H1>
+                    {%location%},{%country%}
+                </H1>
+                <p id="tdy">10:30 - mon - 12/12/12</p>
+            </div>
+            <div class="cel">
+                <H1>{%temperature%} &#8451;</H1>
+                <p>min {%min_temp%}&#8451; - max {%max_temp%}&#8451;</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const tdy = document.getElementById("tdy")
+        
+        const currtime = () => {
+            /*time*/
+            const date = new Date();
+            var hour = date.getHours();
+            
+            if (hour < 12) {
+                var hour=hour;
+
+            } else if (hour > 12) {
+                var hour= hour-12
+            }
+            var minute = date.getMinutes();
+            
+            /*Day*/
+            var allday = ['sun','mon','tue','wed','thu','fri','sat'];
+            var day = allday[ date.getDay()];
+            /*year*/
+            
+            var mon = date.getMonth()+1;
+            var year =date.getDate()+'/'+mon+'/21';
+            var all =hour+":"+minute+" - "+day+" - "+year;
+
+            return all 
+        }
+        
+       tdy.innerHTML= currtime()
+    </script>
+</body>
+
+</html>
